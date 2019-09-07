@@ -1,0 +1,20 @@
+{
+  "name": "@inc2734/dispatch-custom-resize-event",
+  "version": "0.1.0",
+  "author": "inc2734",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inc2734/dispatch-custom-resize-event"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "package.json",
+    "LICENSE",
+    "package-lock.json"
+  ],
+  "devDependencies": {
+    "@inc2734/add-custom-event": "^0.1.0"
+  }
+}
