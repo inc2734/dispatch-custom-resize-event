@@ -17,9 +17,17 @@ const resizeWidth = () => {
 const resizeHeight = () => {
   addCustomEvent(window, 'resize:height');
 
-  window.innerHeight === defaultWindowHeight
-    ? addCustomEvent(window, 'resize:height:undo')
-    : addCustomEvent(window, 'resize:height:update');
+  if (window.innerHeight === defaultWindowHeight) {
+    addCustomEvent(window, 'resize:height:undo');
+  } else {
+    addCustomEvent(window, 'resize:height:update');
+
+    // For UITabBar displaying. Verification required.
+    const isiOS = /iP(hone|(o|a)d)/.test(navigator.userAgent);
+    if (49 < Math.abs(window.innerHeight - defaultWindowHeight) && isiOS) {
+      addCustomEvent(window, 'resize:height:ios');
+    }
+  }
 };
 
 const onResize = () => {
@@ -31,4 +39,4 @@ const onResize = () => {
   }
 };
 
-document.addEventListener('resize', onResize, false);
+window.addEventListener('resize', onResize, false);

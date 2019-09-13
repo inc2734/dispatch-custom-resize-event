@@ -14,7 +14,7 @@
     "LICENSE",
     "package-lock.json"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@inc2734/add-custom-event": "^0.1.0"
   }
 }
