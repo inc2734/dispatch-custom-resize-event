@@ -39,4 +39,16 @@ const onResize = () => {
   }
 };
 
-window.addEventListener('resize', onResize, false);
+const dispatch = () => {
+  const sessionKey = 'inc2734/dispatch-custom-resize-event/dispatch';
+  const didDispatch = Boolean(sessionStorage.getItem(sessionKey)) || false;
+
+  if (! didDispatch) {
+    window.addEventListener('resize', onResize, false);
+  }
+
+  sessionStorage.setItem(sessionKey, true);
+  window.addEventListener('beforeunload', () => sessionStorage.removeItem(sessionKey), false);
+};
+
+dispatch();
