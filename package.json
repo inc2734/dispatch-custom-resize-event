@@ -1,6 +1,6 @@
 {
   "name": "@inc2734/dispatch-custom-resize-event",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "inc2734",
   "license": "MIT",
   "repository": {
@@ -17,17 +17,16 @@
     "README.md"
   ],
   "dependencies": {
-    "@inc2734/add-custom-event": "^0.1.0"
+    "@inc2734/add-custom-event": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel": "^4.3.3"
   },
   "scripts": {
-    "build": "webpack src/index.js -o dist/index.js",
+    "build": "rollup -c",
     "prepublish": "npm run build"
   }
 }
